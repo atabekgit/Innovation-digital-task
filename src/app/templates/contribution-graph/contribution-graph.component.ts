@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ContributionGraphService} from "../../services/contribution-graph.service";
-import {ContributionData} from "../../models/contributionData";
 
 @Component({
   selector: 'app-contribution-graph',
@@ -16,8 +15,9 @@ export class ContributionGraphComponent implements OnInit {
   ngOnInit(): void {
     this.getContributionData()
   }
+
   getContributionData() {
-    this.contributionGraphServiceService.getContributionGraph().pipe().subscribe((contributionData1: ContributionData) => this.contributionData)
+    console.log(this.contributionGraphServiceService.createDb())
   }
 
 }

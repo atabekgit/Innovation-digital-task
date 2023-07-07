@@ -4,7 +4,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {ContributionGraphComponent} from './templates/contribution-graph/contribution-graph.component';
 import {HttpClientModule} from "@angular/common/http";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import {ContributionGraphService} from "./services/contribution-graph.service";
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     HttpClientModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientInMemoryWebApiModule.forRoot(ContributionGraphService),
   ],
   providers: [],
   bootstrap: [AppComponent]
